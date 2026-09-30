@@ -1,1 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+             script-src 'self';
+             style-src 'self' https://fonts.googleapis.com;
+             font-src https://fonts.gstatic.com;
+             img-src 'self' data:;
+             object-src 'none';
+             base-uri 'self';
+             frame-ancestors 'none';
+             form-action 'self'"
+  >
 
+  <title>2026 UC Retiree Health Plan Premium Estimator</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1>
+      <span>University of California · 2026</span>
+      Retiree Health Plan Premium Estimator
+    </h1>
+  </div>
+</header>
+
+<nav class="tab-bar" aria-label="Worksheet tabs">
+  <div class="tab-bar-inner">
+    <button class="tab-btn active" data-tab="tab-estimator">
+      📋 Medical, Dental Premiums
+    </button>
+
+    <button class="tab-btn" data-tab="tab-comparison">
+      📊 Medical Plan Comparison
+    </button>
+
+    <button class="tab-btn" data-tab="tab-vl">
+      👓 Vision, Legal Premiums
+    </button>
+  </div>
+</nav>
+
+<!-- Medical, Dental Premiums tab -->
+<div id="tab-estimator" class="tab-panel active">
+  <div class="tab-inner">
+
+    <div class="left-col">
+
+      <div class="card">
+        <div class="card-header">
+          <div class="step-badge">%</div>
+          <h2>
+            Select the UC contribution % for which you are eligible,
+            then proceed to Step 3.
+          </h2>
+        </div>
+
+        <div class="card-body">
+          <div class="override-row">
+            <div class="field">
+              <label for="override-pct">UC Contribution (Optional)</label>
+
+              <select id="override-pct">
+                <option value="">— Select % if known —</option>
+                <option value="100">100%</option>
+                <option value="95">95%</option>
+                <option value="90">90%</option>
+                <option value="85.5">85.5%</option>
+                <option value="85">85%</option>
+                <option value="81">81%</option>
+                <option value="80">80%</option>
+                <option value="76.5">76.5%</option>
+                <option value="76">76%</option>
+                <option value="75">75%</option>
+                <option value="72">72%</option>
+                <option value="70">70%</option>
+                <option value="68">68%</option>
+                <option value="67.5">67.5%</option>
+                <option value="66.5">66.5%</option>
+                <option value="65">65%</option>
+                <option value="64">64%</option>
+                <option value="63">63%</option>
+                <option value="60">60%</option>
+                <option value="59.5">59.5%</option>
+                <option value="58.5">58.5%</option>
+                <option value="57">57%</option>
+                <option value="56">56%</option>
+                <option value="55">55%</option>
+                <option value="54">54%</option>
+                <option value="52.5">52.5%</option>
+                <option value="52">52%</option>
+                <option value="51">51%</option>
+                <option value="50">50%</option>
+                <option value="49.5">49.5%</option>
+                <option value="49">49%</option>
+                <option value="48">48%</option>
+                <option value="47.5">47.5%</option>
+                <option value="45.5">45.5%</option>
+                <option value="45">45%</option>
+                <option value="44">44%</option>
+                <option value="42.5">42.5%</option>
+                <option value="42">42%</option>
+                <option value="40">40%</option>
+                <option value="39">39%</option>
+                <option value="38.5">38.5%</option>
+                <option value="38">38%</option>
+                <option value="37.5">37.5%</option>
+                <option value="36">36%</option>
+                <option value="35">35%</option>
+                <option value="34">34%</option>
+                <option value="33">33%</option>
+                <option value="32.5">32.5%</option>
+                <option value="32">32%</option>
+                <option value="30">30%</option>
+                <option value="28.5">28.5%</option>
+                <option value="28">28%</option>
+                <option value="27.5">27.5%</option>
+                <option value="27">27%</option>
+                <option value="26">26%</option>
+                <option value="25.5">25.5%</option>
+                <option value="25">25%</option>
+                <option value="24">24%</option>
+                <option value="22.5">22.5%</option>
+                <option value="22">22%</option>
+                <option value="21">21%</option>
+                <option value="20">20%</option>
+                <option value="19.5">19.5%</option>
+                <option value="19">19%</option>
+                <option value="18">18%</option>
+                <option value="17">17%</option>
+                <option value="16.5">16.5%</option>
+                <option value="16">16%</option>
+                <option value="15">15%</option>
+                <option value="14">14%</option>
+                <option value="13">13%</option>
+                <option value="12">12%</option>
+                <option value="11">11%</option>
+                <option value="10">10%</option>
+                <option value="9.5">9.5%</option>
+                <option value="9">9%</option>
+                <option value="8.5">8.5%</option>
+                <option value="8">8%</option>
+                <option value="7.5">7.5%</option>
+                <option value="7">7%</option>
+                <option value="6.5">6.5%</option>
+                <option value="6">6%</option>
+                <option value="5.5">5.5%</option>
+                <option value="5">5%</option>
+                <option value="0">0%</option>
+              </select>
+            </div>
+          </div>
+
+          <span class="hint">
+            If you don't know your UC contribution %, proceed to step 1.
+          </span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="step-badge">1</div>
+          <h2>Eligibility Group</h2>
+        </div>
+
+        <div class="card-body">
+          <div class="field">
+            <label for="group">When did the employee join UCRP?</label>
+
+            <select id="group">
+              <option value="">— Select —</option>
+              <option value="group1">
+                Joined UCRP before 1/1/1990 (Group 1)
+              </option>
+              <option value="group2">
+                Joined UCRP 1/1/1990–6/30/2013 (Group 2)
+              </option>
+              <option value="group3">
+                Joined UCRP / rehired on or after 7/1/2013 (Group 3)
+              </option>
+            </select>
+
+            <span class="hint">
+              If rehired, use date you rejoined UCRP.
+              Safety members: choose Group 2.
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="step-badge">2</div>
+          <h2>Age &amp; Service</h2>
+        </div>
+
+        <div class="card-body">
+          <div class="field">
+            <label for="age">Age at Retirement (whole years)</label>
+            <input
+              type="number"
+              id="age"
+              min="40"
+              max="90"
+              placeholder="e.g. 62"
+            >
+            <span class="hint" id="age-hint" style="display:none;"></span>
+          </div>
+
+          <div class="field">
+            <label for="service">Years of UCRP Service Credit</label>
+            <input
+              type="number"
+              id="service"
+              min="0"
+              max="50"
+              placeholder="e.g. 20"
+            >
+            <span class="hint">
+              Include sick leave (if any). Enter whole years.
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="step-badge">3</div>
+          <h2>Plan Selection</h2>
+        </div>
+
+        <div class="card-body">
+          <div class="field">
+            <label for="plan">Choose a Plan</label>
+
+            <select id="plan">
+              <option value="">— Select a plan —</option>
+
+              <optgroup label="Medical Plans">
+                <option value="UC Blue &amp; Gold HMO/UC Medicare Choice">
+                  UC Blue &amp; Gold HMO / UC Medicare Choice
+                </option>
+
+                <option value="Kaiser Permanente/Senior Advantage HMO">
+                  Kaiser Permanente / Senior Advantage HMO
+                </option>
+
+                <option value="HealthSavings+">
+                  HealthSavings+
+                </option>
+
+                <option value="UC Care PPO/UC Medicare PPO">
+                  UC Care / UC Medicare PPO
+                </option>
+
+                <option value="UC High Option PPO">
+                  UC High Option
+                </option>
+
+                <option value="UC Medicare PPO">
+                  UC Medicare PPO
+                </option>
+
+                <option value="UC Medicare PPO without Rx">
+                  UC Medicare PPO without Rx
+                </option>
+
+                <option value="UC Medicare Choice">
+                  UC Medicare Choice
+                </option>
+              </optgroup>
+
+              <optgroup label="Dental Plans">
+                <option value="Delta Dental PPO">
+                  Delta Dental PPO
+                </option>
+
+                <option value="DeltaCare USA (Dental HMO)">
+                  DeltaCare USA (Dental HMO)
+                </option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end .left-col -->
+
+    <div class="results-panel">
+
+      <div class="card contrib-card">
+        <div class="card-header">
+          <div class="step-badge">%</div>
+          <h2>UC Contribution</h2>
+        </div>
+
+        <div class="card-body">
+          <div class="contrib-display">
+
+            <div class="contrib-value na" id="contrib-display">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h2 id="results-title">Premium Results</h2>
+        </div>
+
+        <div class="table-wrap" id="results-area">
+          <div class="placeholder-msg">
+            <div class="icon">📋</div>
+            <p>
+              Complete the form on the left to see premium estimates.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notes for the Medical, Dental Premiums tab -->
+      <div class="card notes-card">
+        <div class="card-header">
+          <h2>Notes</h2>
+        </div>
+
+        <div class="card-body">
+          <div class="disclaimer-text">
+            <ul>
+            <li>This estimator does not include rates for the following groups: Retirees aged 65 or over without Medicare; union rates; rates for those who qualify through UCRP Disability; rates for those covered by Via Benefits; postdoctoral scholars; interns/residents; students.</li>
+ 
+            <li>
+              Net Monthly Premium: the amount the retiree pays
+              after UC's contribution is applied.
+            </li>
+            <li>
+              Part B Reimb. = Medicare Part B Reimbursement. If UC's contribution exceeds the plan cost, eligible Medicare
+              members may receive the surplus (up to $185/person/month) toward
+              Medicare Part B premiums.
+            </li>
+            <li>
+              Not available = plan is not available for that coverage combination.
+            </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Disclaimer for the Medical, Dental Premiums tab -->
+      <div class="card">
+        <div class="card-header">
+          <h2>Disclaimer</h2>
+        </div>
+
+        <div class="card-body">
+          <div class="disclaimer-text">
+            <p>
+              The primary intent of this insurance premium estimator is for
+              those planning for retirement, or those who are already retired,
+              to estimate their costs and UC’s contribution towards retiree
+              medical and dental insurance premiums.
+            </p>
+
+            <p>
+              This insurance premium calculator is based upon information you
+              input into the calculator, including your UCRP and/or Savings
+              Choice service credit and your retiree health group. The
+              calculator may not provide accurate premium rates in all
+              circumstances. The estimate generated has been prepared to model
+              a retirement scenario. It includes assumptions about your service
+              credit, retiree health group, and other figures that may impact
+              the premium amount that you may pay at retirement. It is based
+              upon published rate schedules that may change between the date
+              the estimate is generated and the date you retire. Any changes
+              in your appointment, service credit, retiree health group or rate
+              schedules may impact your actual insurance premium. The estimate
+              generated is not a guaranteed premium rate and UC makes no
+              representations that they will honor the estimate generated.
+              Additional requirements, limitations and exclusions may apply.
+            </p>
+
+            <p>
+              The benefits of all employees, retirees, and plan beneficiaries
+              are subject to change or termination at the time of contract
+              renewal or at any other time by the University or other governing
+              authorities. The University also reserves the right to determine
+              new premiums, employer contributions and monthly costs at any
+              time. Health and welfare benefits are not accrued or vested
+              benefit entitlements. UC’s contribution toward the monthly cost
+              of the coverage is determined by UC and may change or stop
+              altogether, and may be affected by the state of California’s
+              annual budget appropriation.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end .results-panel -->
+
+  </div>
+</div>
+
+<!-- Medical Plan Comparison tab -->
+<div id="tab-comparison" class="tab-panel">
+  <div class="tab-inner">
+
+    <div class="comp-meta">
+      <h2>2026 Medical Plan Comparison — Net Monthly Premiums</h2>
+
+      <div class="contrib-pill">
+        <span>UC Contribution: </span>
+        <span id="comp-pct-label">—</span>
+      </div>
+
+      <span class="hint" style="font-style:normal;">
+        Set your eligibility inputs on the Medical, Dental Premiums tab
+        to populate this chart.
+      </span>
+    </div>
+
+    <div class="comp-wrap">
+      <table class="comp-tbl">
+        <thead>
+          <tr>
+            <th
+              scope="col"
+              rowspan="2"
+              style="text-align:left;vertical-align:middle;padding:11px 14px;"
+            >
+              Coverage<br>Level
+            </th>
+
+            <th scope="colgroup" colspan="2">
+              UC Blue &amp; Gold HMO /
+              <br>UC Medicare Choice
+              <br>
+              <span class="plan-badge">
+                Health Net HMO / UnitedHealthcare Medicare Advantage PPO
+              </span>
+            </th>
+
+            <th scope="colgroup" colspan="2">
+              Kaiser Permanente /
+              <br>Senior Advantage
+              <br>
+              <span class="plan-badge">
+                HMO / Medicare Advantage HMO
+              </span>
+            </th>
+
+            <th scope="colgroup" colspan="2">
+              HealthSavings+
+              <br>
+              <span class="plan-badge">Blue Shield of CA<br>PPO with HSA</span>
+            </th>
+
+            <th scope="colgroup" colspan="2">
+              UC Care /
+              <br>UC Medicare PPO
+              <br>
+              <span class="plan-badge">
+                Blue Shield of CA PPO / Anthem Blue Cross<br>Medicare Supplement PPO
+              </span>
+            </th>
+
+            <th scope="colgroup" colspan="2">
+              UC High Option
+              <br>
+              <span class="plan-badge">
+                Anthem Blue Cross Medicare Supplement PPO
+              </span>
+            </th>
+
+            <th scope="colgroup" colspan="2">
+              UC Medicare PPO
+              <br>
+              <span class="plan-badge">
+                Anthem Blue Cross Medicare Supplement PPO
+              </span>
+            </th>
+
+            <th scope="colgroup" colspan="2">
+              UC Medicare PPO
+              <br>without Rx
+              <br>
+              <span class="plan-badge">
+                Anthem Blue Cross Medicare Supplement PPO
+              </span>
+            </th>
+
+            <th scope="colgroup" colspan="2">
+              UC Medicare Choice
+              <br>
+              <span class="plan-badge">
+                UnitedHealthcare Medicare Advantage PPO
+              </span>
+            </th>
+          </tr>
+
+          <tr>
+            <th>Net Premium</th>
+            <th>Part B Reimb.</th>
+            <th>Net Premium</th>
+            <th>Part B Reimb.</th>
+            <th>Net Premium</th>
+            <th>Part B Reimb.</th>
+            <th>Net Premium</th>
+            <th>Part B Reimb.</th>
+            <th>Net Premium</th>
+            <th>Part B Reimb.</th>
+            <th>Net Premium</th>
+            <th>Part B Reimb.</th>
+            <th>Net Premium</th>
+            <th>Part B Reimb.</th>
+            <th>Net Premium</th>
+            <th>Part B Reimb.</th>
+          </tr>
+        </thead>
+
+        <tbody id="comp-tbody">
+          <tr>
+            <td
+              colspan="17"
+              style="padding:32px;text-align:center;color:var(--text-muted);font-size:13px;"
+            >
+              Set your eligibility inputs on the Medical, Dental Premiums
+              tab to populate this chart.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card notes-card">
+      <div class="card-header">
+        <h2>Notes</h2>
+      </div>
+
+      <div class="card-body">
+        <div class="disclaimer-text">
+          <ul>
+            <li>This estimator does not include rates for the following groups: Retirees aged 65 or over without Medicare; union rates; rates for those who qualify through UCRP Disability; rates for those covered by Via Benefits; postdoctoral scholars; interns/residents; students.
+            </li>
+            <li>
+              Net Monthly Premium: the amount the retiree pays
+              after UC's contribution is applied.
+            </li>
+            <li>
+              Part B Reimb. = Medicare Part B Reimbursement. If UC's contribution exceeds the plan cost, eligible Medicare members may receive the surplus (up to $185/person/month) toward Medicare Part B premiums.
+            </li>
+            <li>
+              N/A = plan is not available for that coverage combination.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Disclaimer for the Medical Plan Comparison tab -->
+    <div class="card comparison-disclaimer">
+      <div class="card-header">
+        <h2>Disclaimer</h2>
+      </div>
+
+      <div class="card-body">
+        <div class="disclaimer-text">
+          <p>
+            The primary intent of this insurance premium estimator is for
+            those planning for retirement, or those who are already retired,
+            to estimate their costs and UC’s contribution towards retiree
+            medical and dental insurance premiums.
+          </p>
+
+          <p>
+            This insurance premium calculator is based upon information you
+            input into the calculator, including your UCRP and/or Savings
+            Choice service credit and your retiree health group. The
+            calculator may not provide accurate premium rates in all
+            circumstances. The estimate generated has been prepared to model
+            a retirement scenario. It includes assumptions about your service
+            credit, retiree health group, and other figures that may impact
+            the premium amount that you may pay at retirement. It is based
+            upon published rate schedules that may change between the date
+            the estimate is generated and the date you retire. Any changes
+            in your appointment, service credit, retiree health group or rate
+            schedules may impact your actual insurance premium. The estimate
+            generated is not a guaranteed premium rate and UC makes no
+            representations that they will honor the estimate generated.
+            Additional requirements, limitations and exclusions may apply.
+          </p>
+
+          <p>
+            The benefits of all employees, retirees, and plan beneficiaries
+            are subject to change or termination at the time of contract
+            renewal or at any other time by the University or other governing
+            authorities. The University also reserves the right to determine
+            new premiums, employer contributions and monthly costs at any
+            time. Health and welfare benefits are not accrued or vested
+            benefit entitlements. UC’s contribution toward the monthly cost
+            of the coverage is determined by UC and may change or stop
+            altogether, and may be affected by the state of California’s
+            annual budget appropriation.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Vision, Legal Premiums tab -->
+<div id="tab-vl" class="tab-panel">
+  <div class="tab-inner">
+
+    <!-- Vision Service Plan card -->
+    <div class="card">
+      <div class="card-header">
+        <h2>👓 Vision Service Plan</h2>
+      </div>
+
+      <div class="table-wrap" id="vision-area">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Coverage Level</th>
+              <th scope="col">Monthly Premium</th>
+            </tr>
+          </thead>
+
+          <tbody id="vision-tbody">
+            <tr>
+              <th scope="row">U</th>
+              <td>$12.43</td>
+            </tr>
+            <tr>
+              <th scope="row">UC</th>
+              <td>$23.73</td>
+            </tr>
+            <tr>
+              <th scope="row">UA</th>
+              <td>$23.52</td>
+            </tr>
+            <tr>
+              <th scope="row">UAC</th>
+              <td>$29.05</td>
+            </tr>
+          </tbody>
+        </table>
+
+         <div class="vl-note">
+         <strong>Note:</strong> UC retirees must pay VSP directly; VSP premiums cannot be deducted from UC pension checks. Retirees enroll directly with VSP.
+         </div>
+      </div>
+    </div>
+
+    <!-- ARAG Legal card -->
+    <div class="card">
+      <div class="card-header">
+        <h2>⚖️ ARAG Legal</h2>
+      </div>
+
+      <div class="table-wrap" id="legal-area">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Coverage Level</th>
+              <th scope="col">Monthly Premium</th>
+            </tr>
+          </thead>
+
+          <tbody id="legal-tbody">
+            <tr>
+              <th scope="row">U</th>
+              <td>$11.59</td>
+            </tr>
+            <tr>
+              <th scope="row">UC</th>
+              <td>$13.95</td>
+            </tr>
+            <tr>
+              <th scope="row">UA</th>
+              <td>$13.95</td>
+            </tr>
+            <tr>
+              <th scope="row">UAC</th>
+              <td>$16.31</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
