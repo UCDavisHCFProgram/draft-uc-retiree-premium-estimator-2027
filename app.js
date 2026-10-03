@@ -139,7 +139,7 @@ const COV_DESCS = {
 };
 
 const PARTB_PERSONS = { M: 1, MM: 2, MC: 1, MA: 1, MAC: 1, MMM: 3, MMC: 2 };
-const PARTB_MAX = 185;
+const PARTB_MAX = 202.90;
 const LEVELS = ['U', 'UC', 'UA', 'UAC', 'M', 'MM', 'MC', 'MA', 'MAC', 'MMM', 'MMC'];
 const VL_LEVELS = ['U', 'UC', 'UA', 'UAC'];
 
