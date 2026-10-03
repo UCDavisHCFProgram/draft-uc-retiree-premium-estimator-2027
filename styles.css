@@ -419,6 +419,8 @@ tbody tr > :first-child {
   width: 100%;
 }
 
+.amount.retiree-pays.zero { color: var(--navy); }
+
 /* Keep first column left-aligned */
 #tab-estimator .results-panel table thead th:first-child,
 #tab-estimator .results-panel table tbody th[scope="row"],
@@ -873,7 +875,7 @@ tr:not(.na-row) .cov-info-btn {
 .comp-tbl td.grp-sep { border-right: 2px solid var(--border); }
 .comp-tbl td.net { font-weight: 600; color: var(--navy); }
 .comp-tbl td.net.zero { color: var(--navy); }
-.comp-tbl td.pbv { color: var(--green); font-weight: 600; font-size: 11px; }
+.comp-tbl td.pbv { color: var(--green); font-weight: 600; font-size: 12px; }
 .comp-tbl td.nav { color: var(--mid-gray); font-size: 11px; }
 
 .plan-badge {
@@ -1192,6 +1194,9 @@ tr:not(.na-row) .cov-info-btn {
     print-color-adjust: exact !important;
   }
 
+  .amount.retiree-pays.zero {
+  color: var(--navy);
+}
 
   /* Medical, Dental Premiums print layout */
   #tab-estimator.active .tab-inner {
