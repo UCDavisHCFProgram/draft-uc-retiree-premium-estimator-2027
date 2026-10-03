@@ -395,7 +395,10 @@ function renderEstimator() {
       row.appendChild(el('td', { cls: 'amount', text: fmt(r.total) }));
       row.appendChild(el('td', { cls: 'amount', text: fmt(r.maxUC) }));
       row.appendChild(el('td', { cls: 'amount uc-pays', text: fmt(r.ucPays) }));
-      row.appendChild(el('td', { cls: 'amount retiree-pays', text: r.retiree <= 0 ? '$0.00' : fmt(r.retiree) }));
+      row.appendChild(el('td', {
+        cls: `amount retiree-pays${r.retiree <= 0 ? ' zero' : ''}`,
+        text: r.retiree <= 0 ? '$0.00' : fmt(r.retiree),
+    }));
 
       const isDash = !r.partB;
       row.appendChild(el('td', {
