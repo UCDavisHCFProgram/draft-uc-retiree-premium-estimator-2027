@@ -485,7 +485,7 @@ function renderVisionLegal() {
   const pill = document.getElementById('vl-pct-label');
   if (pill) pill.textContent = ucPct !== null ? pctStr(ucPct) : '—';
 
-  renderCoverageTable('vision-tbody', ['$12.43', '$23.73', '$23.52', '$29.05']);
+  renderCoverageTable('vision-tbody', ['$12.74', '$24.32', '$24.11', '$29.78']);
   renderCoverageTable('legal-tbody', ['$11.59', '$13.95', '$13.95', '$16.31']);
 }
 
